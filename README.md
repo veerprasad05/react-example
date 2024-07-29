@@ -10,7 +10,7 @@ Compare **react-example-app** to **react-typescript-example** in this Github.
 Uses the Stack Exchange API to search for questions and answers on **Stack Overflow**.
 
 React TypeScript Best Practices. React TypeScript Architecture for large scale applications.
- 
+
 Created by **ReactJSExample** [https://github.com/reactjsexample](https://github.com/reactjsexample)
 
 Full source code available at [https://github.com/reactjsexample/react-example-app](https://github.com/reactjsexample/react-example-app)
@@ -31,11 +31,11 @@ Click for running example: [react-typescript-example](https://reactjsexample.git
   - [Same App In React JSX](#same-app-in-react-jsx)
   - [Same App In Angular or Polymer](#same-app-in-angular-or-polymer)
 - [Project Setup](#project-setup)
-  * [Prerequisites](#prerequisites)
-  * [How To Install](#how-to-install)
-  * [How To Run](#how-to-run)
-  * [How To Run Unit Tests](#how-to-run-unit-tests)
-  * [How To Build For Production](#how-to-build-for-production)
+  - [Prerequisites](#prerequisites)
+  - [How To Install](#how-to-install)
+  - [How To Run](#how-to-run)
+  - [How To Run Unit Tests](#how-to-run-unit-tests)
+  - [How To Build For Production](#how-to-build-for-production)
 - [Software Libraries Included](#software-libraries-included)
 - [Learn More About React](#learn-more-about-react)
 
@@ -45,14 +45,14 @@ Click for running example: [react-typescript-example](https://reactjsexample.git
 
 He is an expert in **Angular**, **Polymer**, and **React** and maintains these sites at Github:
 
-* **AngularExample** [https://github.com/angularexample](https://github.com/angularexample)
-* **PolymerExample** [https://github.com/polymerexample](https://github.com/polymerexample)
-* **ReactJSExample** [https://github.com/reactjsexample](https://github.com/reactjsexample)
+- **AngularExample** [https://github.com/angularexample](https://github.com/angularexample)
+- **PolymerExample** [https://github.com/polymerexample](https://github.com/polymerexample)
+- **ReactJSExample** [https://github.com/reactjsexample](https://github.com/reactjsexample)
 
 JC may be available to work remote, and can be contacted at these links:
- 
-* LinkedIn: [https://www.linkedin.com/in/jclango](https://www.linkedin.com/in/jclango)
-* Email: [jobs@jclango.com](mailto:jobs@jclango.com)
+
+- LinkedIn: [https://www.linkedin.com/in/jclango](https://www.linkedin.com/in/jclango)
+- Email: [jobs@jclango.com](mailto:jobs@jclango.com)
 
 ## Compare Same App With Redux or JSX or Angular or Polymer
 
@@ -103,7 +103,7 @@ Open a terminal window and make sure you are in the project root folder.
 
 Run the following command for a dev server.
 
-#### `npm  start`
+#### `npm start`
 
 Open your browser and go to [http://localhost:3000](http://localhost:3000)
 
@@ -114,8 +114,8 @@ Open the browser's Developer Tools window to see any errors in the Console.
 ### How To Run Unit Tests
 
 To run the unit tests, you need to stop the server.
- 
-If the server is running, stop the server from the terminal window by pressing *Control-C*.
+
+If the server is running, stop the server from the terminal window by pressing _Control-C_.
 
 To run the unit tests, Run the following command in the terminal window.
 
@@ -130,7 +130,7 @@ Run the following command to do a production build.
 
 #### `npm run build`
 
-Builds the app for production to the *build* folder.<br>
+Builds the app for production to the _build_ folder.<br>
 It correctly bundles React in production mode and optimizes the build for the best performance.
 
 The build is minified and the filenames include the hashes.<br>
@@ -150,11 +150,11 @@ You don’t have to ever use `eject`. The curated feature set is suitable for sm
 
 ## Software Libraries Used
 
-* react 16.9.0
-* react-router-dom 5.0.1
-* typescript 3.6.2
-* node-sass 4.12.0
-* @material-ui/core 4.4.0
+- react 16.9.0
+- react-router-dom 5.0.1
+- typescript 3.6.2
+- node-sass 4.12.0
+- @material-ui/core 4.4.0
 
 For more information see the [package.json](https://github.com/reactjsexample/react-typescript-example/blob/master/package.json) file.
 

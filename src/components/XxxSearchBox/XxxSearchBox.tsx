@@ -23,7 +23,7 @@ class XxxSearchBox extends React.Component<
     this.state = {
       isSearchButtonDisabled: true,
       previousSearchText: null,
-      searchText: ""
+      searchText: "",
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -35,11 +35,11 @@ class XxxSearchBox extends React.Component<
     this.setState({ searchText: searchText }, () => {
       // it's ok to do setState in callback of setState
       // Best Practice: don't use this.state in setState, get state from the updater function
-      this.setState(state => {
+      this.setState((state) => {
         return {
           isSearchButtonDisabled:
             state.searchText.length === 0 ||
-            state.searchText === state.previousSearchText
+            state.searchText === state.previousSearchText,
         };
       });
     });
@@ -52,12 +52,12 @@ class XxxSearchBox extends React.Component<
     }
     this.setState({
       isSearchButtonDisabled: true,
-      previousSearchText: this.state.searchText
+      previousSearchText: this.state.searchText,
     });
     // set search text as parameter in url and navigate to the page that will do the search
     this.props.history.push({
       pathname: "/questions",
-      search: "?title=" + encodeURIComponent(this.state.searchText)
+      search: "?title=" + encodeURIComponent(this.state.searchText),
     });
   }
 

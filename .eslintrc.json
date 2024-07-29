@@ -1,0 +1,33 @@
+{
+  "parser": "@typescript-eslint/parser", // Specifies the ESLint parser for TypeScript
+  "extends": [
+    "eslint:recommended", // Use recommended rules from eslint
+    "plugin:react/recommended", // Use recommended rules from eslint-plugin-react
+    "plugin:@typescript-eslint/recommended", // Use recommended rules from @typescript-eslint/eslint-plugin
+    "prettier", // Uses eslint-config-prettier to disable ESLint rules that would conflict with prettier
+    "plugin:prettier/recommended" // Enables eslint-plugin-prettier and displays prettier errors as ESLint errors
+  ],
+  "plugins": [
+    "react", // Enables eslint-plugin-react
+    "react-hooks", // Enables eslint-plugin-react-hooks
+    "@typescript-eslint", // Enables @typescript-eslint/eslint-plugin
+    "prettier"
+  ],
+  "parserOptions": {
+    "ecmaVersion": 2020, // Allows the parsing of modern ECMAScript features
+    "sourceType": "module", // Allows for the use of imports
+    "ecmaFeatures": {
+      "jsx": true // Allows for the parsing of JSX
+    }
+  },
+  "rules": {
+    "react/prop-types": "off", // Disable prop-types as we use TypeScript for type checking
+    "@typescript-eslint/no-unused-vars": ["warn"], // Warn on unused variables
+    "prettier/prettier": ["error"] // Show prettier errors as ESLint errors
+  },
+  "settings": {
+    "react": {
+      "version": "detect" // Automatically detect the version of React to use
+    }
+  }
+}

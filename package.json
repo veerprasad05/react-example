@@ -1,52 +1,30 @@
 {
-  "name": "react-typescript-example",
-  "version": "1.0.0",
-  "description": "React TypeScript Example App by ReactJSExample https://github.com/reactjsexample ",
-  "homepage": "https://reactjsexample.github.io/react-typescript-example",
-  "private": true,
-  "dependencies": {
-    "@material-ui/core": "^4.4.0",
-    "@material-ui/icons": "^4.2.1",
-    "@types/jest": "24.0.17",
-    "@types/node": "12.6.9",
-    "@types/react": "16.8.24",
-    "@types/react-dom": "16.8.5",
-    "@types/react-router-dom": "^4.3.4",
-    "node-sass": "^4.12.0",
-    "query-string": "^6.8.3",
-    "react": "^16.9.0",
-    "react-dom": "^16.9.0",
-    "react-router-dom": "^5.0.1",
-    "react-scripts": "3.1.1"
-  },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
-  },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
   "devDependencies": {
-    "gh-pages": "^2.1.1",
-    "prettier": "^1.18.2",
-    "tslint": "^5.19.0",
-    "tslint-config-prettier": "^1.18.0",
-    "typescript": "3.6.2"
+    "@typescript-eslint/eslint-plugin": "^7.17.0",
+    "@typescript-eslint/parser": "^7.17.0",
+    "eslint": "^8.57.0",
+    "eslint-config-airbnb": "^19.0.4",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-jest": "^28.6.0",
+    "eslint-plugin-jsx-a11y": "^6.9.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "eslint-plugin-react": "^7.35.0",
+    "eslint-plugin-react-hooks": "^4.6.2",
+    "husky": "^9.1.3",
+    "lint-staged": "^15.2.7",
+    "prettier": "^3.3.3"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,css,md}": [
+      "prettier --write",
+      "eslint --fix",
+      "git add"
+    ]
   }
 }

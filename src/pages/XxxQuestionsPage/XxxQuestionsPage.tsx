@@ -39,7 +39,7 @@ class XxxQuestionsPage extends React.Component<
       isError: false,
       isLoading: true,
       isMorePages: false,
-      questions: []
+      questions: [],
     };
     // bind event handlers so we can refer to the this object
     this.handleFirstPage = this.handleFirstPage.bind(this);
@@ -53,7 +53,7 @@ class XxxQuestionsPage extends React.Component<
   }
 
   componentWillMount() {
-    this.unlisten = this.props.history.listen(location => {
+    this.unlisten = this.props.history.listen((location) => {
       this.readUrlQueryString(location.search);
       this.getQuestions();
     });
@@ -77,7 +77,7 @@ class XxxQuestionsPage extends React.Component<
     this.setState({
       isEmpty: false,
       isError: false,
-      isLoading: true
+      isLoading: true,
     });
     const baseUrl = "https://api.stackexchange.com/2.2/search/advanced";
     const requestParams = {
@@ -88,20 +88,20 @@ class XxxQuestionsPage extends React.Component<
       filter: "withbody",
       page: this.requestedPage || "1",
       order: "desc",
-      sort: "votes"
+      sort: "votes",
     };
     const url = baseUrl + "?" + this.getQueryString(requestParams);
     const thisRef = this;
     fetch(url)
-      .then(function(response) {
+      .then(function (response) {
         if (response.status !== 200) {
           thisRef.setState({
             isError: true,
-            isLoading: false
+            isLoading: false,
           });
           return;
         }
-        response.json().then(data => {
+        response.json().then((data) => {
           if (
             typeof data === "object" &&
             data.hasOwnProperty("items") &&
@@ -112,20 +112,20 @@ class XxxQuestionsPage extends React.Component<
               currentPage: requestParams.page,
               isLoading: false,
               isMorePages: data.has_more,
-              questions: data.items
+              questions: data.items,
             });
           } else {
             thisRef.setState({
               isEmpty: true,
-              isLoading: false
+              isLoading: false,
             });
           }
         });
       })
-      .catch(function() {
+      .catch(function () {
         thisRef.setState({
           isError: true,
-          isLoading: false
+          isLoading: false,
         });
       });
   }
@@ -133,7 +133,7 @@ class XxxQuestionsPage extends React.Component<
   getQueryString(params: any) {
     return Object.keys(params)
       .map(
-        key => encodeURIComponent(key) + "=" + encodeURIComponent(params[key])
+        (key) => encodeURIComponent(key) + "=" + encodeURIComponent(params[key])
       )
       .join("&");
   }
@@ -169,7 +169,7 @@ class XxxQuestionsPage extends React.Component<
   navigateToPage() {
     const queryParams = {
       title: this.title,
-      page: this.requestedPage
+      page: this.requestedPage,
     };
     this.props.history.push(
       this.pageBaseUrl + "?" + this.getQueryString(queryParams)
@@ -207,7 +207,7 @@ class XxxQuestionsPage extends React.Component<
       pageView = (
         <div>
           <ul>
-            {this.state.questions.map(item => (
+            {this.state.questions.map((item) => (
               <li key={item.question_id}>
                 <a
                   href={

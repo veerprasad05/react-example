@@ -37,7 +37,7 @@ class XxxAnswersPage extends React.Component<
       isEmpty: false,
       isError: false,
       isLoading: true,
-      question: {}
+      question: {},
     };
   }
 
@@ -72,7 +72,7 @@ class XxxAnswersPage extends React.Component<
     this.setState({
       isEmpty: false,
       isError: false,
-      isLoading: true
+      isLoading: true,
     });
     this.setState({ isError: false, isLoading: true });
     this.requestUrl =
@@ -82,20 +82,20 @@ class XxxAnswersPage extends React.Component<
       site: "stackoverflow",
       filter: "withbody",
       order: "desc",
-      sort: "votes"
+      sort: "votes",
     };
     const url = this.requestUrl + "?" + this.getQueryString(this.requestParams);
     const thisRef = this;
     fetch(url)
-      .then(function(response) {
+      .then(function (response) {
         if (response.status !== 200) {
           thisRef.setState({
             isError: true,
-            isLoading: false
+            isLoading: false,
           });
           return;
         }
-        response.json().then(data => {
+        response.json().then((data) => {
           if (
             typeof data === "object" &&
             data.hasOwnProperty("items") &&
@@ -103,21 +103,21 @@ class XxxAnswersPage extends React.Component<
             data.items.length > 0
           ) {
             thisRef.setState({
-              question: data.items[0]
+              question: data.items[0],
             });
             thisRef.getAnswers();
           } else {
             thisRef.setState({
               isEmpty: true,
-              isLoading: false
+              isLoading: false,
             });
           }
         });
       })
-      .catch(function() {
+      .catch(function () {
         thisRef.setState({
           isError: true,
-          isLoading: false
+          isLoading: false,
         });
       });
   }
@@ -127,15 +127,15 @@ class XxxAnswersPage extends React.Component<
     const url = this.requestUrl + "?" + this.getQueryString(this.requestParams);
     const thisRef = this;
     fetch(url)
-      .then(function(response) {
+      .then(function (response) {
         if (response.status !== 200) {
           thisRef.setState({
             isError: true,
-            isLoading: false
+            isLoading: false,
           });
           return;
         }
-        response.json().then(data => {
+        response.json().then((data) => {
           if (
             typeof data === "object" &&
             data.hasOwnProperty("items") &&
@@ -144,20 +144,20 @@ class XxxAnswersPage extends React.Component<
           ) {
             thisRef.setState({
               answers: data.items,
-              isLoading: false
+              isLoading: false,
             });
           } else {
             thisRef.setState({
               isEmpty: true,
-              isLoading: false
+              isLoading: false,
             });
           }
         });
       })
-      .catch(function() {
+      .catch(function () {
         thisRef.setState({
           isError: true,
-          isLoading: false
+          isLoading: false,
         });
       });
   }
@@ -165,7 +165,7 @@ class XxxAnswersPage extends React.Component<
   getQueryString(params: any) {
     return Object.keys(params)
       .map(
-        key => encodeURIComponent(key) + "=" + encodeURIComponent(params[key])
+        (key) => encodeURIComponent(key) + "=" + encodeURIComponent(params[key])
       )
       .join("&");
   }
@@ -188,7 +188,7 @@ class XxxAnswersPage extends React.Component<
     const options = {
       year: "numeric",
       month: "numeric",
-      day: "numeric"
+      day: "numeric",
     };
     return date.toLocaleDateString("en", options);
   }
@@ -258,7 +258,7 @@ class XxxAnswersPage extends React.Component<
               }
             ></div>
           </div>
-          {this.state.answers.map(item => (
+          {this.state.answers.map((item) => (
             <div
               className={
                 item.is_accepted
